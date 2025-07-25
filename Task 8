@@ -1,0 +1,20 @@
+let taskList = [];
+
+function addTask(task, callback) {
+    taskList.push(task);
+    callback();
+}
+
+const printTasks = () => {
+    console.log("All Tasks:");
+    taskList.forEach((task, index) => console.log(`${index + 1}. ${task}`));
+};
+
+// Add multiple tasks
+function addMultipleTasks(...tasks) {
+    tasks.forEach(task => taskList.push(task));
+}
+
+addTask("Write Code", printTasks);
+addMultipleTasks("Debug", "Test", "Deploy");
+printTasks();
