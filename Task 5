@@ -1,0 +1,12 @@
+function greet(name) {
+    console.log("Hello", name);
+}
+
+function sum(...args) {
+    let total = 0;
+    for (let num of args) total += num;
+    return total;
+}
+
+greet("Dhanya");
+console.log("Sum is", sum(1, 2, 3, 4));
