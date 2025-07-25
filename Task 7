@@ -1,0 +1,27 @@
+function addTask(task, callback) {
+    tasks.push(task);
+    callback();
+}
+
+let tasks = [];
+
+let showTasks = () => {
+    console.log("Current Tasks:", tasks);
+};
+
+addTask("Learn JS", showTasks);
+addTask("Practice Loops", showTasks);
+
+// Scope Demo
+let globalVar = "I'm global";
+
+function scopeTest() {
+    let blockVar = "I'm block scoped";
+    if (true) {
+        const innerVar = "I'm inside if";
+        console.log(innerVar);
+    }
+    console.log(blockVar);
+}
+scopeTest();
+console.log(globalVar);
