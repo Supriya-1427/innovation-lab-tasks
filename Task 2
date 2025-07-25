@@ -1,0 +1,12 @@
+// Simple JS Calculator
+let a = 20, b = 5;
+
+console.log("Add:", a + b);
+console.log("Subtract:", a - b);
+console.log("Multiply:", a * b);
+
+if (b !== 0) {
+    console.log("Divide:", a / b);
+} else {
+    console.log("Cannot divide by zero");
+}
