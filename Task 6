@@ -1,0 +1,11 @@
+const square = x => x * x;
+console.log("Square of 4:", square(4));
+
+const greet = name => console.log("Hi", name);
+greet("JavaScript");
+
+// Function Expression
+const multiply = function (a, b) {
+    return a * b;
+};
+console.log("Multiply 2 and 5:", multiply(2, 5));
