@@ -1,0 +1,23 @@
+let students = [
+  { name: "john", score: 87.4 },
+  { name: "anna", score: 49.6 },
+  { name: "mark", score: 66.2 }
+];
+
+// Round scores
+students.forEach(s => s.score = Math.round(s.score));
+
+// Capitalize names
+students.forEach(s => s.name = s.name[0].toUpperCase() + s.name.slice(1));
+
+// Print names and scores
+students.forEach(s => console.log(`${s.name}: ${s.score}`));
+
+// Create pass/fail using map
+let status = students.map(s => s.score >= 50 ? "Pass" : "Fail");
+console.log(status);
+
+// Congratulate using for-of
+for (let s of students) {
+  console.log(`Congrats, ${s.name}, you scored ${s.score}`);
+}
