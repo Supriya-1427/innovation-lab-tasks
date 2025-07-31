@@ -1,0 +1,37 @@
+// Task 1: Advanced Array Methods
+
+// 1. filter() - Get numbers greater than 10
+const numbers = [5, 12, 8, 130, 44];
+const filtered = numbers.filter(num => num > 10);
+console.log("Filtered (numbers > 10):", filtered); // [12, 130, 44]
+
+// 2. reduce() - Calculate the sum of numbers
+const sum = numbers.reduce((acc, val) => acc + val, 0);
+console.log("Sum:", sum); // 199
+
+// reduce() - Calculate the product of numbers
+const product = numbers.reduce((acc, val) => acc * val, 1);
+console.log("Product:", product); // 2745600
+
+// reduce() - Concatenate strings
+const words = ["Hello", "world", "from", "JavaScript"];
+const sentence = words.reduce((acc, word) => acc + " " + word);
+console.log("Concatenated String:", sentence); // "Hello world from JavaScript"
+
+// 3. slice() - Extract a portion of an array
+const sliced = numbers.slice(1, 4);
+console.log("Sliced (1 to 3):", sliced); // [12, 8, 130]
+
+// 4. splice() - Remove and add elements
+const fruits = ["apple", "banana", "cherry", "date"];
+fruits.splice(2, 1, "orange", "grape"); // remove 1 at index 2, add 2 new
+console.log("After Splice:", fruits); // ["apple", "banana", "orange", "grape", "date"]
+
+// 5. Spread operator - Clone and merge arrays
+const array1 = [1, 2, 3];
+const array2 = [4, 5];
+const cloned = [...array1];
+const merged = [...array1, ...array2];
+
+console.log("Cloned Array:", cloned); // [1, 2, 3]
+console.log("Merged Array:", merged); // [1, 2, 3, 4, 5]
