@@ -1,0 +1,22 @@
+// Task 2: Array Creation and Basic Operations
+
+// Create arrays
+let numbers = [10, 20, 30];
+let names = ["john", "emma"];
+
+// Access and modify
+numbers[1] = 25; // Change 20 to 25
+names[0] = "alex";
+
+// Array size
+console.log("Numbers array size:", numbers.length);
+console.log("Names array size:", names.length);
+
+// Add and remove elements
+numbers.push(40);        // Add to end
+numbers.pop();           // Remove last
+numbers.shift();         // Remove first
+numbers.unshift(5);      // Add to beginning
+
+console.log("Final numbers array:", numbers);
+console.log("Final names array:", names);
