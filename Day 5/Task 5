@@ -1,0 +1,82 @@
+✅ 1. Product Array
+
+let products = [
+  { id: 1, name: "Laptop", price: 60000, quantity: 2 },
+  { id: 2, name: "Phone", price: 20000, quantity: 0 },
+  { id: 3, name: "Headphones", price: 3000, quantity: 5 },
+  { id: 4, name: "Keyboard", price: 1500, quantity: 0 }
+];
+
+
+---
+
+✅ 2. Use filter() to get available items
+
+const availableProducts = products.filter(p => p.quantity > 0);
+console.log("Available Products:", availableProducts);
+
+
+---
+
+✅ 3. Use reduce() to calculate total cart value
+
+const totalValue = availableProducts.reduce((total, item) => {
+  return total + (item.price * item.quantity);
+}, 0);
+
+console.log("Total Cart Value:", totalValue); // e.g., 60000*2 + 3000*5 = 165000
+
+
+---
+
+✅ 4. Use slice() and splice()
+
+// slice() - get first 2 products without modifying original
+const firstTwo = products.slice(0, 2);
+console.log("First Two Products:", firstTwo);
+
+// splice() - remove product with id 2 (Phone)
+const indexToRemove = products.findIndex(p => p.id === 2);
+const removed = products.splice(indexToRemove, 1);
+console.log("Removed Product:", removed);
+console.log("Updated Products List:", products);
+
+
+---
+
+✅ 5. Use Spread Operator to Clone and Update
+
+const clonedProducts = [...products]; // Clone
+const newProduct = { id: 5, name: "Mouse", price: 800, quantity: 3 };
+const updatedProducts = [...clonedProducts, newProduct]; // Add new product
+
+console.log("Cloned Products:", clonedProducts);
+console.log("Updated Products List:", updatedProducts);
+
+
+---
+
+✅ 6. Create a Product Object with a Method
+
+const productExample = {
+  id: 6,
+  name: "Monitor",
+  price: 12000,
+  quantity: 1,
+  printDetails() {
+    console.log(`Product: ${this.name}, Price: ₹${this.price}, Quantity: ${this.quantity}`);
+  }
+};
+
+productExample.printDetails(); // Output: Product: Monitor, Price: ₹12000, Quantity: 1
+
+
+---
+
+✅ 7. Use Destructuring to Extract Details
+
+const { name, price, quantity } = productExample;
+console.log(`Name: ${name}, Price: ₹${price}, Quantity: ${quantity}`);
+
+
+---
