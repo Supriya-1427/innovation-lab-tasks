@@ -1,0 +1,34 @@
+// Task 3: Object Destructuring and Spread
+
+// 1. Basic destructuring
+const person = { name: "Ravi", age: 25, city: "Mumbai" };
+const { name, age } = person;
+console.log(name); // Ravi
+console.log(age);  // 25
+
+// 2. Destructuring with default values
+const { country = "India", city } = person;
+console.log(country); // India (default)
+console.log(city);    // Mumbai
+
+// 3. Nested object destructuring
+const student = {
+  id: 101,
+  info: {
+    name: "Supriya",
+    grade: "A"
+  }
+};
+const { info: { name: studentName, grade } } = student;
+console.log(studentName); // Supriya
+console.log(grade);       // A
+
+// 4. Spread operator to clone an object
+const original = { a: 1, b: 2 };
+const clone = { ...original };
+console.log("Cloned:", clone); // { a: 1, b: 2 }
+
+// 5. Spread operator to merge objects
+const extra = { b: 3, c: 4 };
+const merged = { ...original, ...extra };
+console.log("Merged:", merged); // { a: 1, b: 3, c: 4 }
