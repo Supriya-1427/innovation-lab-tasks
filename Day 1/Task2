@@ -1,0 +1,33 @@
+// Arithmetic Operators
+let a = 10, b = 3;
+console.log("Add:", a + b);
+console.log("Divide:", a / b);
+console.log("Modulus:", a % b);
+
+// Assignment Operators
+let x = 5;
+x += 3;
+console.log("x after += 3:", x);
+
+// Relational Operators
+console.log("Is 5 == '5'?", 5 == '5');    // true
+console.log("Is 5 === '5'?", 5 === '5');  // false
+
+// Logical Operators
+console.log(true && false); // false
+console.log(true || false); // true
+console.log(!true);         // false
+
+// Conditional (Ternary)
+let age = 20;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+
+// Bitwise Operators
+console.log(5 & 1); // 1
+console.log(5 | 1); // 5
+
+// Increment/Decrement
+let count = 1;
+console.log("Post-increment:", count++); // 1
+console.log("Now count:", count);        // 2
