@@ -1,1 +1,85 @@
+Here are clear and concise answers to each of your questions:
 
+
+---
+
+🔹 What does filter() return?
+ returns a new array containing all the elements that pass the test (return true) implemented by the provided function.
+
+const numbers = [5, 10, 15];
+const result = numbers.filter(num => num > 8);
+console.log(result); // [10, 15]
+
+
+---
+
+🔹 How does reduce() work in JavaScript?
+
+reduce() executes a reducer function on each element of the array, resulting in a single output value (e.g., sum, product, or string).
+
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, val) => acc + val, 0);
+console.log(sum); // 10
+
+acc = accumulator (carries the result)
+
+val = current value
+
+
+
+---
+
+🔹 Difference between slice() and splice()?
+
+Method	Purpose	Returns	Modifies Original?
+
+slice()	Extracts part of array	New array	❌ No
+splice()	Adds/removes elements	Removed elements	✅ Yes
+
+
+// slice
+const a = [1, 2, 3, 4];
+const sliced = a.slice(1, 3); // [2, 3]
+
+// splice
+const b = [1, 2, 3, 4];
+b.splice(1, 2, 9); // removes 2 elements at index 1, adds 9 → b becomes [1, 9, 4]
+
+
+---
+
+🔹 What is the spread operator (...) used for?
+
+The spread operator (...) is used to:
+
+Clone arrays or objects
+
+Merge arrays or objects
+
+Expand elements in function calls
+
+
+// Clone
+const arr1 = [1, 2];
+const copy = [...arr1];
+
+// Merge
+const arr2 = [3, 4];
+const merged = [...arr1, ...arr2]; // [1, 2, 3, 4]
+
+
+---
+
+🔹 How to define a method inside an object?
+
+A method is a function defined inside an object.
+
+const student = {
+  name: "Supriya",
+  sayHello: function () {
+    console.log("Hello, " + this.name);
+  }
+};
+
+// Call the method
+student.sayHello(); // 
