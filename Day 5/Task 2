@@ -1,0 +1,39 @@
+// Task 2: Working with Objects and Methods
+
+// 1. Create an object representing a student
+const student = {
+  name: "Supriya",
+  age: 21,
+  course: "Computer Science",
+  
+  // 2. Add a method to display student info
+  displayInfo: function () {
+    console.log(`Name: ${this.name}, Age: ${this.age}, Course: ${this.course}`);
+  }
+};
+
+// Invoke the method
+student.displayInfo(); // Output: Name: Supriya, Age: 21, Course: Computer Science
+
+// 3. Accessing object properties
+console.log("Name:", student.name); // Access using dot notation
+console.log("Age:", student["age"]); // Access using bracket notation
+
+// 4. Modifying object properties
+student.age = 22; // Modify existing property
+student.grade = "A"; // Add new property
+
+console.log("Updated Age:", student.age);
+console.log("New Property - Grade:", student.grade);
+
+// 5. Adding another method dynamically
+student.updateCourse = function(newCourse) {
+  this.course = newCourse;
+  console.log("Course updated to:", this.course);
+};
+
+// Invoke the new method
+student.updateCourse("Cybersecurity");
+
+// Final state of the object
+console.log("Final Student Object:", student);
