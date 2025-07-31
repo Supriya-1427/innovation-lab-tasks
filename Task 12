@@ -1,0 +1,21 @@
+// Task 1: Math & String Built-in Functions
+
+// Generate random number
+console.log("Random number:", Math.random());
+
+// Round numbers
+console.log("Round 4.6:", Math.round(4.6));
+console.log("Floor 4.9:", Math.floor(4.9));
+console.log("Ceil 4.1:", Math.ceil(4.1));
+
+// Min and Max
+console.log("Max of [4, 9, 1]:", Math.max(4, 9, 1));
+console.log("Min of [4, 9, 1]:", Math.min(4, 9, 1));
+
+// String manipulation
+let text = "hello world";
+
+console.log("Uppercase:", text.toUpperCase());
+console.log("Substring (0-5):", text.substring(0, 5));
+console.log("Includes 'world'?", text.includes("world"));
+console.log("Replace 'world' with 'JavaScript':", text.replace("world", "JavaScript"));
