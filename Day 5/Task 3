@@ -1,10 +1,10 @@
 // Task 3: Object Destructuring and Spread
 
 // 1. Basic destructuring
-const person = { name: "Ravi", age: 25, city: "Mumbai" };
+const person = { name: "Supriya", age: 25, city: "Mumbai" };
 const { name, age } = person;
-console.log(name); // Ravi
-console.log(age);  // 25
+console.log(name); 
+console.log(age);  
 
 // 2. Destructuring with default values
 const { country = "India", city } = person;
