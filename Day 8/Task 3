@@ -1,0 +1,24 @@
+// ===== Task 3: Function Context & Advanced Calls =====
+
+const person = { name: "Priya" };
+
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+// 1. call() - invoke immediately, pass args individually
+greet.call(person, "Hello", "!"); // Hello, Priya!
+
+// 2. apply() - invoke immediately, pass args as an array
+greet.apply(person, ["Hi", "..."]); // Hi, Priya...
+
+// 3. bind() - returns new function, can be reused
+const boundGreet = greet.bind(person, "Good morning");
+boundGreet("?"); // Good morning, Priya?
+
+// 4. Compare call, apply, bind
+console.log("\nComparison:");
+greet.call(person, "Hey", "!");     // call
+greet.apply(person, ["Hola", "!!"]); // apply
+const newFn = greet.bind(person, "Namaste");
+newFn("!!!"); // bind
