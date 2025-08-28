@@ -1,0 +1,17 @@
+// Array destructuring
+const numbers = [10, 20, 30];
+const [a, b, c] = numbers;
+console.log(a, b, c); // 10 20 30
+
+// Object destructuring (with nested object)
+const user = {
+  name: "SUPRIYA ",
+  age: 25,
+  address: {
+    city: "Delhi",
+    pin: 110001
+  }
+};
+
+const { name, age, address: { city } } = user;
+console.log(name, age, city); 
