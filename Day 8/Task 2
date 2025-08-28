@@ -1,0 +1,11 @@
+const student = {
+  id: 1,
+  grade: "A",
+  "fav-subject": "Math"
+};
+
+// Dot notation
+console.log(student.grade); 
+
+// Bracket notation
+console.log(student["fav-subject"]);
