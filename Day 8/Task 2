@@ -1,11 +1,31 @@
-const student = {
-  id: 1,
-  grade: "A",
-  "fav-subject": "Math"
-};
 
-// Dot notation
-console.log(student.grade); 
+// ===== Task 2: Complex Data & Parameter Handling =====
 
-// Bracket notation
-console.log(student["fav-subject"]);
+// 1. Arrays of objects & access nested data
+const users = [
+  { id: 1, name: "John", address: { city: "Mumbai" } },
+  { id: 2, name: "Sara", address: { city: "Pune" } }
+];
+users.forEach(u => console.log(`${u.name} lives in ${u.address.city}`));
+
+// 2. Rest parameters in functions
+function sum(...nums) {
+  return nums.reduce((total, n) => total + n, 0);
+}
+console.log("Sum with rest params:", sum(10, 20, 30, 40)); // 100
+
+// 3. Spread operator (combine arrays / clone objects)
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2];
+console.log("Combined Arrays:", combined); // [1,2,3,4]
+
+const obj1 = { a: 1, b: 2 };
+const clone = { ...obj1, c: 3 };
+console.log("Cloned Object:", clone); // {a:1, b:2, c:3}
+
+// 4. Function with parameter destructuring
+function displayUser({ id, name, address: { city } }) {
+  console.log(`${name} (ID: ${id}) lives in ${city}`);
+}
+displayUser({ id: 3, name: "Ankit", address: { city: "Bangalore" } });
