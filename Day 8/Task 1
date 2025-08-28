@@ -1,17 +1,33 @@
-// Array destructuring
+// ===== Task 1: Destructuring, Notation & Iteration =====
+
+// 1. Destructuring arrays & objects
 const numbers = [10, 20, 30];
 const [a, b, c] = numbers;
-console.log(a, b, c); // 10 20 30
+console.log("Array Destructuring:", a, b, c); // 10 20 30
 
-// Object destructuring (with nested object)
 const user = {
-  name: "SUPRIYA ",
+  name: "Alice",
   age: 25,
-  address: {
-    city: "Delhi",
-    pin: 110001
-  }
+  address: { city: "Delhi", pin: 110001 }
 };
-
 const { name, age, address: { city } } = user;
-console.log(name, age, city); 
+console.log("Object Destructuring:", name, age, city); // Alice 25 Delhi
+
+// 2. Dot & Bracket Notation
+const student = { id: 1, grade: "A", "fav-subject": "Math" };
+console.log("Dot Notation:", student.grade); // A
+console.log("Bracket Notation:", student["fav-subject"]); // Math
+
+// 3. Iterating through objects
+const car = { brand: "Toyota", model: "Corolla", year: 2022 };
+
+console.log("For...in loop:");
+for (let key in car) console.log(`${key}: ${car[key]}`);
+
+console.log("Object.keys():");
+Object.keys(car).forEach(key => console.log(`${key}: ${car[key]}`));
+
+console.log("Object.entries():");
+for (let [key, value] of Object.entries(car)) {
+  console.log(`${key} => ${value}`);
+}
