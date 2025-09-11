@@ -1,0 +1,52 @@
+// Base class
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+
+    info() {
+        return `${this.name}, ${this.age} years old`;
+    }
+}
+
+// Subclass extending Person
+class Student extends Person {
+    constructor(name, age, grade) {
+        // Call parent constructor with super()
+        super(name, age);
+        this.grade = grade;
+    }
+
+    // Override greet method
+    greet() {
+        console.log(`Hi, I am ${this.name}, a student in grade ${this.grade}.`);
+    }
+
+    // Add a new method
+    study(subject) {
+        console.log(`${this.name} is studying ${subject}.`);
+    }
+}
+
+// Create instances of Student
+const student1 = new Student("Alice", 18, 12);
+const student2 = new Student("Bob", 20, 14);
+
+// Test inherited method
+console.log(student1.info()); // inherited from Person
+
+// Test overridden method
+student1.greet(); // overridden in Student
+
+// Test new method
+student1.study("Math");
+student2.study("Physics");
+
+// Test inherited method on second instance
+student2.greet(); // overridden greet
+console.log(student2.info()); // inherited info
