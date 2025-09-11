@@ -1,0 +1,57 @@
+// Combined Code: Date Objects + Classes and this Keyword
+
+class DateManager {
+  constructor() {
+    this.now = new Date();
+  }
+
+  showCurrentDateTime() {
+    console.log("Current Date/Time:", this.now);
+
+    // Extract components
+    console.log("Year:", this.now.getFullYear());
+    console.log("Month:", this.now.getMonth() + 1);
+    console.log("Day:", this.now.getDate());
+    console.log("Hours:", this.now.getHours());
+    console.log("Minutes:", this.now.getMinutes());
+    console.log("Day of Week:", this.now.getDay());
+
+    // Manipulate dates
+    let nextWeek = new Date(this.now);
+    nextWeek.setDate(this.now.getDate() + 7);
+    console.log("One week later:", nextWeek);
+
+    let nextYear = new Date(this.now);
+    nextYear.setFullYear(this.now.getFullYear() + 1);
+    console.log("Next Year:", nextYear);
+
+    // Different formats
+    console.log("toDateString:", this.now.toDateString());
+    console.log("toLocaleDateString:", this.now.toLocaleDateString());
+    console.log("toLocaleTimeString:", this.now.toLocaleTimeString());
+
+    let formatted = `${this.now.getDate()}-${this.now.getMonth() + 1}-${this.now.getFullYear()} ${this.now.getHours()}:${this.now.getMinutes()}`;
+    console.log("Custom Format:", formatted);
+  }
+}
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+// Usage
+let manager = new DateManager();
+manager.showCurrentDateTime();
+
+let person1 = new Person("Alice", 25);
+let person2 = new Person("Bob", 30);
+
+person1.greet();
+person2.greet();
