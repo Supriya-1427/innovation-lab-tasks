@@ -1,0 +1,75 @@
+// Library Management System
+// Demonstrates Classes, Inheritance, super(), this, and Date objects
+
+// Base class Book
+class Book {
+  constructor(title, author, publishedYear) {
+    this.title = title;
+    this.author = author;
+    // Store year as Date object (only year is needed)
+    this.publishedYear = new Date(publishedYear, 0, 1);
+  }
+
+  // Method to return a summary
+  getSummary() {
+    return `${this.title} by ${this.author}, published in ${this.publishedYear.getFullYear()}`;
+  }
+}
+
+// Subclass EBook extending Book
+class EBook extends Book {
+  constructor(title, author, publishedYear, fileSize) {
+    // Call parent constructor with super()
+    super(title, author, publishedYear);
+    this.fileSize = fileSize; // in MB
+  }
+
+  // Override getSummary() to include file size
+  getSummary() {
+    return `${super.getSummary()} [File size: ${this.fileSize}MB]`;
+  }
+}
+
+// ------------------------------
+// Demonstration
+// ------------------------------
+
+// Create Book instances
+const book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+const book2 = new Book("To Kill a Mockingbird", "Harper Lee", 1960);
+
+// Create EBook instances
+const ebook1 = new EBook("JavaScript Essentials", "John Doe", 2020, 5);
+const ebook2 = new EBook("Learn Node.js", "Jane Smith", 2022, 8);
+
+// Display summaries
+console.log(book1.getSummary());
+console.log(book2.getSummary());
+console.log(ebook1.getSummary());
+console.log(ebook2.getSummary());
+
+// ------------------------------
+// Demonstrate "this" usage
+// ------------------------------
+const lostThis = book1.getSummary;
+// Calling function without binding loses "this"
+try {
+  console.log(lostThis()); // Will be undefined or error
+} catch (err) {
+  console.log("Error when 'this' is lost:", err.message);
+}
+
+// Fixing lost "this" using bind()
+const fixedThis = book1.getSummary.bind(book1);
+console.log("Fixed with bind():", fixedThis());
+
+// ------------------------------
+// Output Example
+// ------------------------------
+//
+// The Great Gatsby by F. Scott Fitzgerald, published in 1925
+// To Kill a Mockingbird by Harper Lee, published in 1960
+// JavaScript Essentials by John Doe, published in 2020 [File size: 5MB]
+// Learn Node.js by Jane Smith, published in 2022 [File size: 8MB]
+// Error when 'this' is lost: Cannot read properties of undefined (reading 'title')
+// Fixed with bind(): The Great Gatsby by F. Scott Fitzgerald, published in 1925
